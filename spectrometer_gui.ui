@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>826</width>
-    <height>561</height>
+    <width>1416</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,8 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>511</width>
-      <height>181</height>
+      <width>1141</width>
+      <height>196</height>
      </rect>
     </property>
    </widget>
@@ -32,8 +32,8 @@
      <rect>
       <x>20</x>
       <y>230</y>
-      <width>511</width>
-      <height>192</height>
+      <width>1141</width>
+      <height>196</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -83,13 +83,32 @@ font: 10pt &quot;Calibri&quot;;</string>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>10</y>
-      <width>201</width>
+      <x>1200</x>
+      <y>110</y>
+      <width>191</width>
       <height>411</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QSlider" name="sliderBright">
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="invertedAppearance">
+        <bool>false</bool>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>50</number>
+       </property>
+      </widget>
+     </item>
      <item row="5" column="0">
       <widget class="QSlider" name="sliderCont">
        <property name="maximum">
@@ -122,25 +141,6 @@ font: 10pt &quot;Calibri&quot;;</string>
        </property>
       </widget>
      </item>
-     <item row="12" column="0">
-      <widget class="QSlider" name="sliderExpo">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="maximum">
-        <number>7</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksBothSides</enum>
-       </property>
-       <property name="tickInterval">
-        <number>1</number>
-       </property>
-      </widget>
-     </item>
      <item row="7" column="0">
       <widget class="QSlider" name="sliderSat">
        <property name="maximum">
@@ -154,6 +154,13 @@ font: 10pt &quot;Calibri&quot;;</string>
        </property>
        <property name="tickInterval">
         <number>50</number>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>White Balance</string>
        </property>
       </widget>
      </item>
@@ -179,6 +186,25 @@ font: 10pt &quot;Calibri&quot;;</string>
        </property>
       </widget>
      </item>
+     <item row="12" column="0">
+      <widget class="QSlider" name="sliderExpo">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>7</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+       <property name="tickInterval">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
      <item row="10" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
@@ -186,24 +212,10 @@ font: 10pt &quot;Calibri&quot;;</string>
        </property>
       </widget>
      </item>
-     <item row="13" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>White Balance</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Brightness</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Contrast</string>
        </property>
       </widget>
      </item>
@@ -221,26 +233,63 @@ font: 10pt &quot;Calibri&quot;;</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QSlider" name="sliderBright">
-       <property name="maximum">
-        <number>255</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksBothSides</enum>
-       </property>
-       <property name="tickInterval">
-        <number>50</number>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Contrast</string>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="buttonGrab">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>60</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save Spectrum Data</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineFilename">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>20</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>20</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Filename:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buttonCalibrate">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>500</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calibrate</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -248,7 +297,7 @@ font: 10pt &quot;Calibri&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>826</width>
+     <width>1416</width>
      <height>21</height>
     </rect>
    </property>
